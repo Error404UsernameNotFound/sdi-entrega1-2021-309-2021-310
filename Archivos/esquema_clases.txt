@@ -3,23 +3,29 @@
 ___________________________________________________________
 
 - main package (classes)
+    * WalladosApplication.java
     - controllers
     - entities
+        * User.java
+        * Oferta.java
     - repositories
     - services
     - validators
 
 
-- main packages (resources)
+- main package (resources)
     * internacionalizacion (messages*.properties)
     - templates
         - fragments
             * nav.html (Boton con "Cerrar sesion")
         - administrator
             * profile.html (Perfil de administrador. Boton de acceso a /list de administrador)
-            * list.html (Lista de usuarios)
+            * list.html (Lista de usuarios, con checkboxes. Boton "Eliminar", elimina todos los usuarios seleccioandos)
         - standard
-            * profile.html (Perfil de usuario estandar. Boton de acceso a /list de usuario)
-            * list.html (Lista de productos)
+            * profile.html (Perfil de usuario estandar. Boton de acceso a /list_self. Boton de acceso a /add. Boton de acceso a /list de usuario estandar, con campo de busqueda. Boton de acceso a /list_bought)
+            * list_self.html (Lista de productos ofertados por el usuario. Boton "Eliminar" por cada oferta, para eliminarla)
+            * add.html (Agregar una oferta. (Propuesta: redirige a /list_self al finalizar))
+            * list.html (Listado de todos los productos en la busqueda de /profile realizada, disponibles y vendidos. Boton de "Comprar" por cada uno disponible (no redirige, la compra se realiza desde aqui))
+            * list_bought.html (Lista de productos comprados por el usuario)
         * index.html (Acceso general; campos para datos, botones de log in (accede a /profile en funcion del tipo), register (accede a /register))
         * register.html (Permite a un nuevo usuario registrarse. Si se hace bien, redirige a /profile de usuario estandar)
