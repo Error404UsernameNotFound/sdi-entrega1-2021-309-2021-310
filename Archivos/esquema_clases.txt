@@ -1,0 +1,25 @@
+- Carpetas/paquetes
+* Archivos/clases
+___________________________________________________________
+
+- main package (classes)
+    - controllers
+    - entities
+    - repositories
+    - services
+    - validators
+
+
+- main packages (resources)
+    * internacionalizacion (messages*.properties)
+    - templates
+        - fragments
+            * nav.html (Boton con "Cerrar sesion")
+        - administrator
+            * profile.html (Perfil de administrador. Boton de acceso a /list de administrador)
+            * list.html (Lista de usuarios)
+        - standard
+            * profile.html (Perfil de usuario estandar. Boton de acceso a /list de usuario)
+            * list.html (Lista de productos)
+        * index.html (Acceso general; campos para datos, botones de log in (accede a /profile en funcion del tipo), register (accede a /register))
+        * register.html (Permite a un nuevo usuario registrarse. Si se hace bien, redirige a /profile de usuario estandar)
