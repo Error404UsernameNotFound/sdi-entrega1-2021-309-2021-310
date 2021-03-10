@@ -29,7 +29,7 @@ ___________________________________________________________
     * internacionalizacion (messages*.properties)
     - templates
         - fragments
-            * nav.html (Boton con "Cerrar sesion")
+            * nav.html (Boton con "Cerrar sesion". Boton de cambio de idioma)
         - administrator
             * profile.html (Perfil de administrador. Boton de acceso a /list de administrador)
             * list.html (Lista de usuarios, con checkboxes. Boton "Eliminar", elimina todos los usuarios seleccioandos)
