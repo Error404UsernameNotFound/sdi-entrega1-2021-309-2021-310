@@ -13,6 +13,7 @@ public class User {
 	private String name;
 	private String lastName;
 	private String role;
+	private double money;
 
 	private String password;
 	@Transient
@@ -86,6 +87,14 @@ public class User {
 
 	public void setRole(String role) {
 		this.role = role;
+	}
+
+	public double getMoney() {
+		return money;
+	}
+
+	public void setMoney(double money) {
+		this.money = money;
 	}
 	
 }
