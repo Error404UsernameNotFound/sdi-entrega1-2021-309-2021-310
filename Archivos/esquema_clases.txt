@@ -1,16 +1,28 @@
 - Carpetas/paquetes
 * Archivos/clases
++ Interfaces
 ___________________________________________________________
 
 - main package (classes)
     * WalladosApplication.java
     - controllers
+        * HomeController.java
+        * ProductsController.java
+        * UsersController.java
     - entities
-        * User.java
         * Oferta.java
+        * User.java
     - repositories
+        + ProductsRepository.java
+        + UsersRepository.java
     - services
+        * ProductsService.java
+        * RolesService.java
+        * SecurityService.java
+        * UsersService.java
     - validators
+        * ProductTenderValidator.java
+        * SignUpFormValidator.java
 
 
 - main package (resources)
