@@ -11,6 +11,7 @@ public class Oferta {
 	private String descripcion;
 	private String fecha;
 	private double precio;
+	private User user;
 
 	public long getId() {
 		return id;
@@ -50,6 +51,14 @@ public class Oferta {
 
 	public void setPrecio(double precio) {
 		this.precio = precio;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 }
