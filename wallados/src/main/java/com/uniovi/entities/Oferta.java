@@ -2,6 +2,8 @@ package com.uniovi.entities;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 public class Oferta {
 	@Id
@@ -11,6 +13,9 @@ public class Oferta {
 	private String descripcion;
 	private String fecha;
 	private double precio;
+	
+	@ManyToOne
+	@JoinColumn(name = "user_id")
 	private User user;
 
 	public long getId() {
