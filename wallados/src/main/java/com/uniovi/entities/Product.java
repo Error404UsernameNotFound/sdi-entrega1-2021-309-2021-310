@@ -1,5 +1,7 @@
 package com.uniovi.entities;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -15,12 +17,21 @@ public class Product {
 	private long id;
 	private String titulo;
 	private String descripcion;
-	private String fecha;
+	private Date fecha;
 	private double precio;
 	
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	private User user;
+	
+	public Product(String titulo, String descripcion, double precio, User user) {
+		super();
+		this.titulo = titulo;
+		this.descripcion = descripcion;
+		this.fecha = new Date();
+		this.precio = precio;
+		this.user = user;
+	}
 
 	public long getId() {
 		return id;
@@ -46,11 +57,11 @@ public class Product {
 		this.descripcion = descripcion;
 	}
 
-	public String getFecha() {
+	public Date getFecha() {
 		return fecha;
 	}
 
-	public void setFecha(String fecha) {
+	public void setFecha(Date fecha) {
 		this.fecha = fecha;
 	}
 

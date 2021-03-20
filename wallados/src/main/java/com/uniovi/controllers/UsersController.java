@@ -59,10 +59,10 @@ public class UsersController {
 				@RequestParam(value="", required=false) String searchText) {
 		if (searchText != null && !searchText.isEmpty()) {
 			model.addAttribute("usersList", 
-					usersService.searchUsersByEmailAndName(searchText));
+					usersService.searchUsersNotAdminByEmailAndName(searchText));
 		}
 		else {
-			model.addAttribute("usersList", usersService.getUsers());
+			model.addAttribute("usersList", usersService.getUsersNotAdmin());
 		}
 		return "user/list";
 	}
