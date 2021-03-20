@@ -24,6 +24,12 @@ public class UsersService {
 		return users;
 	}
 
+	public List<User> getUsersNotAdmin() {
+		List<User> users = new ArrayList<User>();
+		usersRepository.findAllNotAdmin().forEach(users::add);
+		return users;
+	}
+
 	public User getUser(Long id) {
 		return usersRepository.findById(id).get();
 	}
@@ -45,12 +51,17 @@ public class UsersService {
 		usersRepository.deleteById(id);
 	}
 	
-
-	
 	public List<User> searchUsersByEmailAndName(String searchText) {
 		List<User> users = new ArrayList<User>();
 		searchText = "%"+searchText+"%";
 		users = usersRepository.searchByEmailOrName(searchText);
+		return users;
+	}
+	
+	public List<User> searchUsersNotAdminByEmailAndName(String searchText) {
+		List<User> users = new ArrayList<User>();
+		searchText = "%"+searchText+"%";
+		users = usersRepository.searchByEmailOrNameNotAdmin(searchText);
 		return users;
 	}
 
