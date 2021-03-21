@@ -26,10 +26,19 @@ public class ProductsController {
 		
 		products = productsService.getProducts(pageable);
 
-		model.addAttribute("peoductsList", products.getContent());
+		model.addAttribute("productsList", products.getContent());
 		model.addAttribute("page", products);
 		
 		return "offert/list";
+	}
+	
+	@RequestMapping("/offert/list/update")
+	public String updateList(Model model, Pageable pageable, Principal principal) {
+		Page<Product> products = productsService.getProducts(pageable);
+		
+		model.addAttribute("productsList", products.getContent());
+
+		return "offert/list :: tableProducts";
 	}
 
 }
