@@ -9,14 +9,14 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.uniovi.entities.Product;
 
-public interface ProductsRepository extends CrudRepository<Product, String> {
+public interface ProductsRepository extends CrudRepository<Product, Long> {
+	
+	@Query("SELECT p FROM Product p WHERE (LOWER(p.owner.email) LIKE LOWER(?1))")
+	List<Product> findByOwnerEmail(String email);
 	
 //	@Query("")
 //	List<Product> searchByTitle(String title);
 	
 	Page<Product> findAll(Pageable pageable);
-	
-	@Query("SELECT p FROM Product p WHERE LOWER(p.owner.email) LIKE LOWER(?1)")
-	List<Product> findByOwner(String email);
 
 }

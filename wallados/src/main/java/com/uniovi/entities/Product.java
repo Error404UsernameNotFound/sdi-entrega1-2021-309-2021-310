@@ -28,6 +28,9 @@ public class Product {
 	@JoinColumn(name = "buyer_id")
 	private User buyer;
 	
+	public Product() {
+	}
+	
 	public Product(String titulo, String descripcion, double precio, User owner) {
 		super();
 		this.titulo = titulo;
