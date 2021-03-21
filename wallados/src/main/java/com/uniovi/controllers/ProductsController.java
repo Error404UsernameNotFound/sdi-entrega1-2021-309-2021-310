@@ -41,10 +41,10 @@ public class ProductsController {
 
 		return "offert/list :: tableProducts";
 	}
-	
+//	, @RequestParam(value="", required=false) String id
 	@RequestMapping("/offertOwned/list")
-	public String getListoOwned(Model model, @RequestParam(value="", required=false) String id) {
-		model.addAttribute("productsList", productsService.getOwnedProducts(id));
+	public String getListOwned(Model model) {
+		model.addAttribute("productsOwnedList", productsService.getOwnedProducts("99999990A"));
 		return "offert/listOwned";
 	}
 

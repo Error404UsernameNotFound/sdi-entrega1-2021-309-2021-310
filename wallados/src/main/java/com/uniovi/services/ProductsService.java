@@ -9,6 +9,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.uniovi.entities.Product;
+import com.uniovi.entities.User;
 import com.uniovi.repositories.ProductsRepository;
 
 @Service
@@ -30,7 +31,23 @@ public class ProductsService {
 	}
 
 	public List<Product> getOwnedProducts(String id) {
-		return productsRepository.findByOwner("99999990A");
+		return productsRepository.findByOwnerEmail(id);
+	}
+
+	public Product getProduct(Long id) {
+		return productsRepository.findById(id).get();
+	}
+
+	public void addProduct(Product product) {
+		productsRepository.save(product);
+	}
+
+	public void editProduct(Product product) {
+		productsRepository.save(product);
+	}
+
+	public void deleteProduct(Long id) {
+		productsRepository.deleteById(id);
 	}
 	
 	public Page<Product> getProductsByOwner(Pageable pageable, String userId) {
