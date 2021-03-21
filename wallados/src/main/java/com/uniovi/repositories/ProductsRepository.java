@@ -19,7 +19,7 @@ public interface ProductsRepository extends CrudRepository<Product, Long> {
 	
 	Page<Product> findAll(Pageable pageable);
 
-	@Query("SELECT r FROM Product r WHERE r.user.id = ?1 ")
-	Page<Product> findBoughtByUserId(Pageable pageable, String userId);
+//	@Query("SELECT r FROM Product r WHERE r.user.id = ?1 ")
+//	Page<Product> findBoughtByUserId(Pageable pageable, String userId);
 
 }

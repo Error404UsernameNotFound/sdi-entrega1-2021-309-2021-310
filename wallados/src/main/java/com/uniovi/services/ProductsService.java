@@ -50,10 +50,10 @@ public class ProductsService {
 		productsRepository.deleteById(id);
 	}
 	
-	public Page<Product> getProductsByOwner(Pageable pageable, String userId) {
-		Page<Product> products = productsRepository.findBoughtByUserId(pageable, userId);
-		
-	return products;	
-	}
+//	public Page<Product> getProductsByOwner(Pageable pageable, String userId) {
+//		Page<Product> products = productsRepository.findBoughtByUserId(pageable, userId);
+//		
+//	return products;	
+//	}
 	
 }
