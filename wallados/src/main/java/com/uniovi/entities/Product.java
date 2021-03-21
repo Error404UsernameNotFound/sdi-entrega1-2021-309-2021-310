@@ -22,19 +22,19 @@ public class Product {
 	
 	@ManyToOne
 	@JoinColumn(name = "user_id")
-	private User user;
+	private User owner;
 	
 	@ManyToOne
-	@JoinColumn(name = "user_id")
+	@JoinColumn(name = "buyer_id")
 	private User buyer;
 	
-	public Product(String titulo, String descripcion, double precio, User user) {
+	public Product(String titulo, String descripcion, double precio, User owner) {
 		super();
 		this.titulo = titulo;
 		this.descripcion = descripcion;
 		this.fecha = new Date();
 		this.precio = precio;
-		this.user = user;
+		this.owner = owner;
 	}
 
 	public long getId() {
@@ -77,12 +77,12 @@ public class Product {
 		this.precio = precio;
 	}
 
-	public User getUser() {
-		return user;
+	public User getOwner() {
+		return owner;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public void setOwner(User owner) {
+		this.owner = owner;
 	}
 
 }

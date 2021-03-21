@@ -1,7 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/head" />
-<body>
-
-</body>
+	<body>
+		<nav th:replace="fragments/nav"></nav>
+		<div class="container">
+			<h2 th:text="#{offert.owned.list.title}">Tus ofertas</h2>
+			
+			<div class="table-responsive">
+				<table class="table table-hover" th:fragment="tableProducts"
+					id="tableProducts">
+					<thead>
+						<tr>
+							<th th:text="#{offert.list.table.title}">Título</th>
+							<th th:text="#{offert.list.table.description}">Descripción</th>
+							<th th:text="#{offert.list.table.date}">Fecha</th>
+							<th th:text="#{offert.list.table.price}">Precio</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="product : ${productList}">
+							<td th:text="${product.titulo}"></td>
+							<td th:text="${product.description}"></td>
+							<td th:text="${product.fecha}"></td>
+							<td th:text="${product.precio}"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<footer th:replace="fragments/pagination"></footer>
+		</div>
+		<footer th:replace="fragments/footer"></footer>
+	</body>
 </html>

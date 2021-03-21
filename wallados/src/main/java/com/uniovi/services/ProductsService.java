@@ -1,5 +1,8 @@
 package com.uniovi.services;
 
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -24,6 +27,10 @@ public class ProductsService {
 		Page<Product> products = productsRepository.findAll(pageable);
 		
 		return products;
+	}
+
+	public List<Product> getOwnedProducts(String id) {
+		return productsRepository.findByOwner("99999990A");
 	}
 	
 	public Page<Product> getProductsByOwner(Pageable pageable, String userId) {
