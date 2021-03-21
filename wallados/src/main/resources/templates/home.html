@@ -1,7 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head th:replace="fragments/head" />
 <body>
-
+	<nav th:replace="fragments/nav" />
+	<div class="container" style="text-align: center">
+		<h2 th:text="#{welcome.message}"></h2>
+		<h3 th:text="#{home.message}">Esta es una zona privada la web</h3>
+	</div>
+	<footer th:replace="fragments/footer" />
 </body>
 </html>

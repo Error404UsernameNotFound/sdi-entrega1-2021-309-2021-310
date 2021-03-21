@@ -1,5 +1,7 @@
 package com.uniovi.entities;
 
+import java.util.Set;
+
 import javax.persistence.*;
 
 @Entity
@@ -18,6 +20,12 @@ public class User {
 	private String password;
 	@Transient
 	private String passwordConfirm;
+	
+	@OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
+	private Set<Product> productsOwned;
+	
+	@OneToMany(mappedBy = "buyer", cascade = CascadeType.ALL)
+	private Set<Product> productsBuyed;
 
 	public User(String email, String name, String lastName) {
 		super();
@@ -95,6 +103,22 @@ public class User {
 
 	public void setMoney(double money) {
 		this.money = money;
+	}
+
+	public Set<Product> getProductsOwned() {
+		return productsOwned;
+	}
+
+	public void setProductsOwned(Set<Product> productsOwned) {
+		this.productsOwned = productsOwned;
+	}
+
+	public Set<Product> getProductsBuyed() {
+		return productsBuyed;
+	}
+
+	public void setProductsBuyed(Set<Product> productsBuyed) {
+		this.productsBuyed = productsBuyed;
 	}
 	
 }
