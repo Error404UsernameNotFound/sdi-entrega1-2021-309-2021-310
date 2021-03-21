@@ -28,7 +28,7 @@ public class ProductsService {
 	}
 
 	public List<Product> getOwnedProducts(String id) {
-		return productsRepository.findByOwner("99999990A");
+		return productsRepository.findByOwner(id);
 	}
 	
 }

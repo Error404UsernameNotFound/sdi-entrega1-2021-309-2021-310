@@ -17,6 +17,6 @@ public interface ProductsRepository extends CrudRepository<Product, String> {
 	Page<Product> findAll(Pageable pageable);
 	
 	@Query("SELECT p FROM Product p WHERE LOWER(p.owner.email) LIKE LOWER(?1)")
-	List<Product> findByOwner(String id);
+	List<Product> findByOwner(String email);
 
 }
