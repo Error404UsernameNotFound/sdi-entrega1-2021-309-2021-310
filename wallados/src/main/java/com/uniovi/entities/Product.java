@@ -24,6 +24,10 @@ public class Product {
 	@JoinColumn(name = "user_id")
 	private User user;
 	
+	@ManyToOne
+	@JoinColumn(name = "user_id")
+	private User buyer;
+	
 	public Product(String titulo, String descripcion, double precio, User user) {
 		super();
 		this.titulo = titulo;

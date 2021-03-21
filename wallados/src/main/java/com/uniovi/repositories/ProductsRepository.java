@@ -1,7 +1,5 @@
 package com.uniovi.repositories;
 
-import java.util.List;
-
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
@@ -15,5 +13,8 @@ public interface ProductsRepository extends CrudRepository<Product, String> {
 //	List<Product> searchByTitle(String title);
 	
 	Page<Product> findAll(Pageable pageable);
+	
+	@Query("SELECT r FROM Product r WHERE r.user.id = ?1 ")
+	Page<Product> findBoughtByUserId(Pageable pageable, String userId);
 
 }
