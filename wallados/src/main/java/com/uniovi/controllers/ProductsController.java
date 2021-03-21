@@ -10,6 +10,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.uniovi.entities.Product;
 import com.uniovi.services.ProductsService;
@@ -39,6 +40,12 @@ public class ProductsController {
 		model.addAttribute("productsList", products.getContent());
 
 		return "offert/list :: tableProducts";
+	}
+	
+	@RequestMapping("/offertOwned/list")
+	public String getListoOwned(Model model, @RequestParam(value="", required=false) String id) {
+		model.addAttribute("productsList", productsService.getOwnedProducts(id));
+		return "offert/listOwned";
 	}
 
 }

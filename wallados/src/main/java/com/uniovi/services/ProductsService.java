@@ -1,6 +1,5 @@
 package com.uniovi.services;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +25,10 @@ public class ProductsService {
 	public Page<Product> getProducts(Pageable pageable) {
 		Page<Product> products = productsRepository.findAll(pageable);
 		return products;
+	}
+
+	public List<Product> getOwnedProducts(String id) {
+		return productsRepository.findByOwner("99999990A");
 	}
 	
 }
